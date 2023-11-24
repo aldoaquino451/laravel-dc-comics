@@ -10,6 +10,7 @@
                 <th scope="col">Titolo</th>
                 <th scope="col">Serie</th>
                 <th scope="col">Prezzo</th>
+                <th scope="col">Prezzo</th>
                 <th scope="col">Azioni</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                     <td>{{ $comic->title }}</td>
                     <td>{{ $comic->series }}</td>
                     <td>{{ $comic->price }}</td>
+                    <td>{{ $comic->sale_date }}</td>
                     <td>
                         <a href="{{ route('comics.show', $comic) }}" class="btn btn-success">
                             <i class="fa-solid fa-eye"></i>

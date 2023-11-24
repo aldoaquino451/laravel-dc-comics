@@ -36,7 +36,30 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Salvo in una varibile l'array di dati che sono stati inseriti dentro al form
+        $form_data = $request->all();
+
+        // Creo una nuova istanza per il nuovo fumetto da aggiugnere
+        $new_comic = new Comic();
+
+        // Assegno per ogni proprietà di Comic l'elemento corrispondente del Form
+        $new_comic->title = $form_data['title'];
+        $new_comic->description = $form_data['description'];
+        $new_comic->thumb = $form_data['thumb'];
+        $new_comic->price = $form_data['price'];
+        $new_comic->series = $form_data['series'];
+        $new_comic->sale_date = $form_data['sale_date'];
+        $new_comic->type = $form_data['type'];
+
+        // Salvo la nuova istanza nel database
+        $new_comic->save();
+
+        // Restituisco direttamente la pagina con la lista di tutti i fumetti, compreso l'ultimo inserito
+        // return redirect()->route('comics.index');
+
+        // Restituisco solo la scheda del fumetto appena inserito
+        // Vanno passato anche i dati del nuovo fumetto per poterli visualizzare
+        return redirect()->route('comics.show', $new_comic);
     }
 
     /**

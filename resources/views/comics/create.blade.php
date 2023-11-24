@@ -5,7 +5,10 @@
 
     <div class="row">
         <div class="col-6">
-            <form action="{{ route('comics.create') }}" method="GET">
+            <form action="{{ route('comics.store') }}" method="POST">
+                {{-- elemnto da inserire i  tutti i form di Laravel per un controllo di sicurezza  --}}
+                @csrf
+
                 <div class="form-group mb-3">
                     <label for="title">Titolo</label>
                     <input type="text" class="form-control" name="title" id="title" placeholder="Inserisci il titolo">
