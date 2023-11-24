@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="description">Descrizione</label>
-                    <textarea class="form-control" name="description" id="description" rows="4"></textarea>
+                    <textarea class="form-control" name="description" id="description" rows="6"></textarea>
                 </div>
                 <div class="form-group mb-3">
                     <label for="thumb">Immagine</label>
@@ -36,10 +36,12 @@
                     <label class="active" for="sale_date">Data di Vendita</label>
                     <input type="date" id="sale_date" name="sale_date">
                 </div>
-                <div class="form-group mb-3">
-                    <label for="type">Tipo</label>
-                    <input type="text" class="form-control" name="type" id="type"
-                        placeholder="Inserisci il tipo">
+                <div class="form-group col-md-6 mb-3">
+                    <label for="type">Scegli in Tipo</label>
+                    <select class="form-control" id="type" name="type">
+                        <option>comic book</option>
+                        <option>graphic novel</option>
+                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Invia</button>

@@ -26,8 +26,12 @@
                         <a href="{{ route('comics.show', $comic) }}" class="btn btn-success">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
-                        <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                        <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
                     </td>
                 </tr>
             @endforeach
