@@ -42,7 +42,7 @@ class ComicController extends Controller
         // Creo una nuova istanza per il nuovo fumetto da aggiugnere
         $new_comic = new Comic();
 
-        // Assegno per ogni proprietà di Comic l'elemento corrispondente del Form
+        // Assegno per ogni proprietà di Comic il valore corrispondente del Form
         $new_comic->title = $form_data['title'];
         $new_comic->description = $form_data['description'];
         $new_comic->thumb = $form_data['thumb'];
@@ -93,21 +93,23 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        // Salvo in una varibile l'array di dati che sono stati inseriti dentro al form
+        // Salvo in una varibile l'array dei dati modificati e non tramite form
         $form_data = $request->all();
 
-        // Assegno per ogni proprietà di Comic l'elemento corrispondente del Form
+        // Riassegno per ogni proprietà di Comic il valore modificato
         $comic->title = $form_data['title'];
         $comic->description = $form_data['description'];
         $comic->thumb = $form_data['thumb'];
         $comic->price = $form_data['price'];
         $comic->series = $form_data['series'];
         $comic->sale_date = $form_data['sale_date'];
-        $comic->type = $form_data['typeof'];
+        $comic->type = $form_data['type'];
 
+        // Salvo le modfiche nel database
         $comic->save();
 
-        return redirect()->route('comics.index');
+        // Restituisco la pagina dei dettagli
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -116,8 +118,17 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        // Salvo il titolo in una variabile
+        $title = $comic->title;
+
+        // Prendo l'elemento che passo tramite action del form e applico il comando delete()
+        $comic->delete();
+
+        // Reindirizzo alla stessa pagina index
+        return redirect()
+            ->route('comics.index')
+            ->with('deleted', "Il fumetto $title è stato eliminato");
     }
 }

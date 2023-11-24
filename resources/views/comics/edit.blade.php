@@ -33,17 +33,12 @@
                     <label class="active" for="sale_date">Modifica la Data di Vendita</label>
                     <input type="date" id="sale_date" name="sale_date" value="{{ $comic->sale_date }}">
                 </div>
-                <div class="form-group col-md-6 mb-3">
+                <div class="form-group mb-3">
                     <label for="type">Modifica il tipo</label>
-                    <select class="form-control" id="type" name="type">
-                        <option>comic book</option>
-                        <option>graphic novel</option>
-                    </select>
+                    <input type="text" class="form-control" name="type" id="type" value="{{ $comic->type }}">
                 </div>
-
                 <div class="mb-5 mt-4">
                     <button type="submit" class="btn btn-primary">Invia</button>
-                    <button type="reset" class="btn btn-secondary">Annulla</button>
                 </div>
             </form>
         </div>

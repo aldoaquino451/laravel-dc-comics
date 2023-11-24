@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h2 class="mb-4">Aggiungi un nuovo Fumetto nel catalogo</h2>
+    <h2 class="mb-4">Aggiungi un nuovo Fumetto nel Catalogo</h2>
 
     <div class="row">
         <div class="col-6">
@@ -37,10 +37,11 @@
                     <input type="date" id="sale_date" name="sale_date">
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="type">Scegli in Tipo</label>
+                    <label for="type">Tipo</label>
                     <select class="form-control" id="type" name="type">
-                        <option>comic book</option>
-                        <option>graphic novel</option>
+                        <option value="#">Scegli il tipo...</option>
+                        <option value="comic book">comic book</option>
+                        <option value="graphic novel">graphic novel</option>
                     </select>
                 </div>
 

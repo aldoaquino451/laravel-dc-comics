@@ -1,7 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1 class="mb-4 text-center">{{ $comic->series }}</h1>
+    <h1 class="mb-4 text-center">
+        {{ $comic->series }}
+        <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">
+            <i class="fa-solid fa-pencil"></i>
+        </a>
+    </h1>
 
     <div class="row">
 
