@@ -10,4 +10,7 @@ class PageController extends Controller
         $comics = config('comics');
         return view('home', compact('comics'));
     }
+    public function contacts() {
+        return view('contacts');
+    }
 }

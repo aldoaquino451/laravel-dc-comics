@@ -14,3 +14,9 @@ Iniziate a definire le prime operazioni CRUD con le relative view:
 
 #### Bonus
 Inviare il form del create a store() salvando i dati nel db e reindirizzando alla show
+
+#### Milestone 3
+Ciao ragazzi, oggi lavorate sulla stessa repo di ieri e completate le operazioni CRUD.
+
+#### Bonus
+Tramite javascript, quando l’utente clicca sul pulsante “delete”, chiedere conferma della cancellazione, prima di eliminare l’elemento.
